@@ -1,3 +1,3 @@
 Proyecto Web Personal
 
-zugazagoitia-com
+https://zugazagoitia.com
