@@ -15,7 +15,7 @@ Template by [HTML5UP](https://html5up.net/aerial)
 		Font Awesome (fortawesome.github.com/Font-Awesome)
 
 #### Other:
-    html5shiv.js (@afarkas @jdalton @jon_neal @rem)
+    		html5shiv.js (@afarkas @jdalton @jon_neal @rem)
 		CSS3 PIE (css3pie.com)
 		Sass (sass-lang.com)
 		Respond.js (j.mp/respondjs)
