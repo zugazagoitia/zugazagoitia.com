@@ -5,18 +5,21 @@ https://zugazagoitia.com
 
 Credits
 --
-Template by [HTML5UP](https://html5up.net/)
+Template by [HTML5UP](https://html5up.net/aerial)
 
 
 #### Background Image:
-		Unsplash (unsplash.com) Photo by Neil Iris 
-		
+		Ryan Schroeder via Unsplash (unsplash.com - CC0 licensed)
+			"Icefields" (flickr.com/photos/ryanschroeder/11876741703)
 #### Icons:
 		Font Awesome (fortawesome.github.com/Font-Awesome)
 
 #### Other:
-    	Responsive Tools (github.com/ajlkn/responsive-tools)
-		
+    	html5shiv.js (@afarkas @jdalton @jon_neal @rem)
+		CSS3 PIE (css3pie.com)
+		Sass (sass-lang.com)
+		Respond.js (j.mp/respondjs)
+		Skel (skel.io)
 
 
 License
