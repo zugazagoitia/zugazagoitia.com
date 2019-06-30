@@ -100,6 +100,12 @@ dl {
   margin-top: 0;
   margin-bottom: 1rem; }
 
+
+ul, ol {
+  padding: 0;
+  margin-left: 1em;
+}
+
 ol ol,
 ul ul,
 ol ul,
