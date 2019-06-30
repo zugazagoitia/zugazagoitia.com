@@ -5,20 +5,14 @@ https://zugazagoitia.com
 
 Credits
 --
-Template by [HTML5UP](https://html5up.net/)
+Template by [ColorLib](https://colorlib.com)
 
 
-#### Background Image:
-		Unsplash (unsplash.com) Photo by Neil Iris 
 		
 #### Icons:
 		Font Awesome (fortawesome.github.com/Font-Awesome)
 
-#### Other:
-    	Responsive Tools (github.com/ajlkn/responsive-tools)
-		
-
-
+	
 License
 --
 
