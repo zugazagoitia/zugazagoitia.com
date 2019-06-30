@@ -1,4 +1,3 @@
-# $1 = website root
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
@@ -8,7 +7,7 @@ cd $DIR
 find -type f \
     -name "*.js" ! -name "*.min.*" ! -name "vfs_fonts*" \
     -exec echo {} \; \
-    -exec uglifyjs -o {}.min {} \; \
+    -exec /usr/bin/uglifyjs -o {}.min {} \; \
     -exec rm {} \; \
     -exec mv {}.min {} \;
 
@@ -16,7 +15,7 @@ find -type f \
 find -type f \
     -name "*.css" ! -name "*.min.*" \
     -exec echo {} \; \
-    -exec uglifycss --output {}.min {} \; \
+    -exec /usr/bin/uglifycss --output {}.min {} \; \
     -exec rm {} \; \
     -exec mv {}.min {} \;
 
@@ -24,6 +23,6 @@ find -type f \
 find -type f \
     -name "*.html" ! -name "*.min.*" \
     -exec echo {} \; \
-    -exec html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true --output {}.min {} \; \
+    -exec /usr/bin/html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true --output {}.min {} \; \
     -exec rm {} \; \
     -exec mv {}.min {} \;
