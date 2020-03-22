@@ -6,6 +6,7 @@ https://zugazagoitia.com
 Credits
 --
 Template by [ColorLib](https://colorlib.com)
+And Lightroom Classic
 
 
 		
