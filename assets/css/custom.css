@@ -1,27 +1,27 @@
 html {
-  background-color: #F1948A !important;
+  background-color: #242423 !important;
   color: inherit;
 }
 
 .thumb-img {
-  border-color: #F1948A !important;
+  border-color: #242423 !important;
 }
 
 #loupeContainer div.background {
-  background-color: #F1948A !important;
+  background-color: #242423 !important;
   color: inherit;
 }
 
 header div.background {
-  background-color: #F1948A !important;
+  background-color: #242423 !important;
   color: inherit;
 }
 
 .custom-colorable {
-  fill: #000000 !important;
+  fill: #F1948A !important;
 }
 
 body {
-  background-color: #F1948A !important;
-  color: #000000 !important;
+  background-color: #242423 !important;
+  color: #F1948A !important;
 }
