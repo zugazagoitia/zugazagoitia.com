@@ -1,20 +1,34 @@
-name: CI -> Deploy to My website
+name: CI -> Minify, compress and deploy
 on:
   push:
-    branches: [ master, Development ]
+    branches: master
 jobs:
-  build:
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v2
       # Minify Files
-      - name: Web minifier
+      - name: 🔨 Compress Web files
         uses: zugazagoitia/minify-js@v0.3
-
-      # Deploy  
-      - name: Upload from public_html via FTP
-        uses: airvzxf/ftp-deployment-action@latest
+      # Compress Images
+      - name: 🗜️ Compress Images
+        id: calibre
+        uses: calibreapp/image-actions@main
         with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          compressOnly: true
+      # Deploy  
+      - name: 📂 FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        with:
+          # ftp server
           server: ${{ secrets.FTP_SERVER }}
-          user: ${{ secrets.FTP_USERNAME }}
+          # ftp username
+          username: ${{ secrets.FTP_USERNAME }}
+          # ftp password
           password: ${{ secrets.FTP_PASSWORD }}
+          # Deletes ALL contents of server-dir, even items in excluded with exclude argument
+          dangerous-clean-slate: true
+
