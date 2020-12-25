@@ -7,10 +7,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      # Here is the deployment action
+      # Minify Files
+      - name: Minify Action
+        uses: anthonyftwang/minify-action@v1
+      # Deploy  
       - name: Upload from public_html via FTP
         uses: airvzxf/ftp-deployment-action@latest
         with:
           server: ${{ secrets.FTP_SERVER }}
           user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          delete: "true"
