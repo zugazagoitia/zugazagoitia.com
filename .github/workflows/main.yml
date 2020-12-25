@@ -8,8 +8,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # Minify Files
-      - name: Minify-JS Action
-        uses: JossyDevers/minify-js@v1.0.0
+      - name: Web minifier
+        uses: zugazagoitia/minify-js@v0.1
 
       # Deploy  
       - name: Upload from public_html via FTP
