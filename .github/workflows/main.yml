@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v2
       # Minify Files
       - name: Web minifier
-        uses: zugazagoitia/minify-js@v0.1
+        uses: zugazagoitia/minify-js@v0.2
 
       # Deploy  
       - name: Upload from public_html via FTP
