@@ -8,8 +8,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # Minify Files
-      - name: Minify Action
-        uses: anthonyftwang/minify-action@v1
+      - name: Auto Minify
+        uses: nizarmah/auto-minify@v2.0
       # Deploy  
       - name: Upload from public_html via FTP
         uses: airvzxf/ftp-deployment-action@latest
