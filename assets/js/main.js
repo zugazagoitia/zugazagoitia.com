@@ -19,7 +19,7 @@
 
                 $('html, body').animate({
                     scrollTop: scrollto
-                }, 1500, 'easeInOutExpo');
+                }, 300, 'easeInOutExpo');
 
                 if (window.matchMedia("(max-width:991px)").matches) {
                     $('.nav-menu').hide();
