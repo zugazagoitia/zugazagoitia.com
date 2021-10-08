@@ -30,7 +30,7 @@ jobs:
           # ftp password
           password: ${{ secrets.FTP_PASSWORD }}
           # Deletes ALL contents of server-dir, even items in excluded with exclude argument
-          dangerous-clean-slate: true
+          dangerous-clean-slate: false
       - name: ☁️ Cloudflare Purge Cache
         uses: jakejarvis/cloudflare-purge-action@v0.3.0
         env:
