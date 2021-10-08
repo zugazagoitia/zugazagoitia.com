@@ -5,12 +5,12 @@ https://zugazagoitia.com
 
 Credits
 --
+[<img alt="Deployed with FTP Deploy Action" src="https://img.shields.io/badge/Deployed With-FTP DEPLOY ACTION-%3CCOLOR%3E?style=flat&color=0077b6">](https://github.com/SamKirkland/FTP-Deploy-Action)
+
 Template by [BootstrapMade](https://bootstrapmade.com/)
 And Lightroom Classic
 
-#### Icons:
-
-		Ionicons(https://github.com/ionic-team/ionicons)
+Icons by [Ionicons](https://github.com/ionic-team/ionicons)
 
 License
 --
