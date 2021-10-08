@@ -2,6 +2,9 @@ name: CI -> Minify, compress and deploy
 on:
   push:
     branches: master
+concurrency: 
+  group: deploy
+  cancel-in-progress: true
 jobs:
   web-deploy:
     name: 🎉 Deploy
