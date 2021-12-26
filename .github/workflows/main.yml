@@ -1,7 +1,7 @@
 name: CI -> Minify, compress and deploy
 on:
   push:
-    branches: master
+    branches: master,dev
 jobs:
   web-deploy:
     name: 🎉 Deploy
