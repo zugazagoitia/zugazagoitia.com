@@ -1,7 +1,10 @@
 name: CI/CD -> Minify, compress and deploy
 on:
   push:
-    branches: master,dev
+    branches: [master, dev]
+concurrency: 
+  group: deploy
+  cancel-in-progress: true    
 jobs:
   compress:
     name: 🖼️ Compress
@@ -41,14 +44,13 @@ jobs:
           key: ${{ github.event.head_commit.id }}  
 
       - name: 📂 SFTP Sync
-        uses: swillner/sftp-sync-action@v1.0
+        uses: burnett01/rsync-deployments@5.1
         with:
-          server: ${{ secrets.SSH_SERVER }}
-          user: ${{ secrets.SSH_USERNAME }}
-          user_private_key:  ${{ secrets.SSH_PRIVATE_KEY }}
-          host_public_key:  ${{ secrets.SSH_SERVER_PUBLIC_KEY }}
-          remote: ${{ secrets.SSH_REMOTE_DIR }}
-          mirror_options: "--exclude-glob=.git*/"   
+          switches: -vzr --delete --exclude=".git/" 
+          remote_path: ${{ secrets.SSH_REMOTE_DIR }}
+          remote_host: ${{ secrets.SSH_SERVER }}
+          remote_user: ${{ secrets.SSH_USERNAME }}
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}  
 
       - name: ☁️ Cloudflare Purge Cache
         uses: jakejarvis/cloudflare-purge-action@v0.3.0
