@@ -37,20 +37,32 @@ jobs:
 
     steps:
       # Deploy  
+       
       - name: Restore Cache
         uses: actions/cache@v2
         with:
           path: ./*
           key: ${{ github.event.head_commit.id }}  
 
-      - name: 📂 SFTP Sync
+      - name: 📂 SFTP Sync (PROD)
         uses: burnett01/rsync-deployments@5.1
+        if: endsWith(github.ref, '/master')        
         with:
           switches: -vzr --delete --exclude=".git/" 
           remote_path: ${{ secrets.SSH_REMOTE_DIR }}
           remote_host: ${{ secrets.SSH_SERVER }}
           remote_user: ${{ secrets.SSH_USERNAME }}
           remote_key: ${{ secrets.SSH_PRIVATE_KEY }}  
+
+      - name: 📂 SFTP Sync (DEV)
+        uses: burnett01/rsync-deployments@5.1
+        if: endsWith(github.ref, '/dev')        
+        with:
+          switches: -vzr --delete --exclude=".git/" 
+          remote_path: ${{ secrets.SSH_REMOTE_DIR_STAGING }}
+          remote_host: ${{ secrets.SSH_SERVER }}
+          remote_user: ${{ secrets.SSH_USERNAME }}
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}            
 
       - name: ☁️ Cloudflare Purge Cache
         uses: jakejarvis/cloudflare-purge-action@v0.3.0
