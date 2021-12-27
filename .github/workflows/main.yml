@@ -25,7 +25,7 @@ jobs:
       - name: Cache
         uses: actions/cache@v2
         with:
-          path: .
+          path: ./
           key: ${{ github.event.head_commit.id }} 
       
   deploy:
@@ -40,7 +40,7 @@ jobs:
       - name: Restore Cache
         uses: actions/cache@v2
         with:
-          path: .
+          path: ./
           key: ${{ github.event.head_commit.id }}  
 
       - name: 📂 SFTP Sync
