@@ -1,4 +1,4 @@
-Personal Webpage ![CI -> Minify, compress and deploy](https://github.com/zugazagoitia/zugazagoitia.com/workflows/CI%20-%3E%20Minify,%20compress%20and%20deploy/badge.svg) [![License: CC BY 3.0](https://img.shields.io/badge/License-CC%20BY%203.0-lightgrey.svg)](https://creativecommons.org/licenses/by/3.0/)
+Personal Webpage [![CI/CD -> Minify, compress and deploy](https://github.com/zugazagoitia/zugazagoitia.com/actions/workflows/main.yml/badge.svg)](https://github.com/zugazagoitia/zugazagoitia.com/actions/workflows/main.yml) [![License: CC BY 3.0](https://img.shields.io/badge/License-CC%20BY%203.0-lightgrey.svg)](https://creativecommons.org/licenses/by/3.0/)
 ======
 
 https://zugazagoitia.com
