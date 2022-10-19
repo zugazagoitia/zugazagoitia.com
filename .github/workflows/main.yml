@@ -6,59 +6,34 @@ concurrency:
   group: deploy
   cancel-in-progress: true    
 jobs:
-  compress:
-    name: 🖼️ Compress
-    runs-on: ubuntu-latest
-    steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v2
-      # Minify Files
-      - name: 🔨 Compress Web files
-        uses: zugazagoitia/minify-js@v0.4
-      # Compress Images
-      - name: 🗜️ Compress Images
-        id: calibre
-        uses: calibreapp/image-actions@main
-        with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-          compressOnly: true
-      - name: Cache
-        uses: actions/cache@v2
-        with:
-          path: ./*
-          key: ${{ github.event.head_commit.id }} 
-      
   deploy:
-    name: 🎉 Deploy
+    name: 🚀 Deploy
     runs-on: ubuntu-latest
 
-    needs:
-      - compress
-
     steps:
-      # Deploy  
-       
-      - name: Restore Cache
-        uses: actions/cache@v2
-        with:
-          path: ./*
-          key: ${{ github.event.head_commit.id }}  
+      - name: 📥 Checkout
+        uses: actions/checkout@v2
+
+      - name: 🔨 Build
+        run: ./build-gallery.sh
 
       - name: 📂 SFTP Sync (PROD)
-        uses: burnett01/rsync-deployments@5.1
+        uses: burnett01/rsync-deployments@5.2.1
         if: endsWith(github.ref, '/master')        
         with:
-          switches: -vzr --delete --exclude=".git/" 
+          switches: -vzr --delete
+          path: src/
           remote_path: ${{ secrets.SSH_REMOTE_DIR }}
           remote_host: ${{ secrets.SSH_SERVER }}
           remote_user: ${{ secrets.SSH_USERNAME }}
           remote_key: ${{ secrets.SSH_PRIVATE_KEY }}  
 
       - name: 📂 SFTP Sync (DEV)
-        uses: burnett01/rsync-deployments@5.1
+        uses: burnett01/rsync-deployments@5.2.1
         if: endsWith(github.ref, '/dev')        
         with:
-          switches: -vzr --delete --exclude=".git/" 
+          switches: -vzr --delete
+          path: src/
           remote_path: ${{ secrets.SSH_REMOTE_DIR_STAGING }}
           remote_host: ${{ secrets.SSH_SERVER }}
           remote_user: ${{ secrets.SSH_USERNAME }}

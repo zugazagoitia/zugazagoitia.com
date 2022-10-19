@@ -1,1 +1,4 @@
 .idea/
+!/src/gallery/images/*
+!/src/gallery/images
+!/src/gallery/index.html
