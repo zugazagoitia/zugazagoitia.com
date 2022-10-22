@@ -35,7 +35,7 @@ IMAGES=$(echo "$IMAGES" | shuf)
 
 for IMAGE in $IMAGES; do
     echo "<a href=\"images/$IMAGE\" >" >> "$GALLERY_HTML"
-    echo "<img src=\"images/$IMAGE\" loading=\"lazy\" />" >> "$GALLERY_HTML"
+    echo "<img src=\"images/$IMAGE\" loading=\"lazy\" style=\"max-width: 100vw; max-height: 100vh\" />" >> "$GALLERY_HTML"
     echo "</a>" >> "$GALLERY_HTML"
 done
 
