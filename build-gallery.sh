@@ -23,7 +23,7 @@ echo "<html>" > "$GALLERY_HTML"
 echo "<head>" >> "$GALLERY_HTML"
 echo "<title>Gallery</title>" >> "$GALLERY_HTML"
 echo "</head>" >> "$GALLERY_HTML"
-echo "<body>" >> "$GALLERY_HTML"
+echo "<body style=\"margin:0px\" >" >> "$GALLERY_HTML"
 echo "<header>" >> "$GALLERY_HTML"
 echo "<h1>Gallery</h1>" >> "$GALLERY_HTML"
 echo "<a href=\"../\" > Back to home</a>" >> "$GALLERY_HTML"
@@ -35,7 +35,7 @@ IMAGES=$(echo "$IMAGES" | shuf)
 
 for IMAGE in $IMAGES; do
     echo "<a href=\"images/$IMAGE\" >" >> "$GALLERY_HTML"
-    echo "<img src=\"images/$IMAGE\" loading=\"lazy\" style=\"max-width: 100vw; max-height: 100vh\" />" >> "$GALLERY_HTML"
+    echo "<img src=\"images/$IMAGE\" loading=\"lazy\" style=\" padding: 1px; max-width:35vw; max-height:65vh; height:auto; \" />" >> "$GALLERY_HTML"
     echo "</a>" >> "$GALLERY_HTML"
 done
 
