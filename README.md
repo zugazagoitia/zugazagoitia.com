@@ -7,6 +7,7 @@ Credits
 --
 [<img alt="Deployed with FTP Deploy Action" src="https://img.shields.io/badge/Deployed With-FTP DEPLOY ACTION-%3CCOLOR%3E?style=flat&color=0077b6">](https://github.com/SamKirkland/FTP-Deploy-Action)
 
+CSS by [sakura.css](https://oxal.org/projects/sakura/) and [normalize.css](http://necolas.github.io/normalize.css/) for the landing page and [tacit.css](https://yegor256.github.io/tacit/) for the gallery.
 
 License
 --

@@ -22,6 +22,7 @@ IMAGES=$(find "$IMAGE_DIR" -type f -printf "%f\n")
 echo "<html>" > "$GALLERY_HTML"
 echo "<head>" >> "$GALLERY_HTML"
 echo "<title>Gallery</title>" >> "$GALLERY_HTML"
+echo "<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css-1.5.5.min.css\"/>" >> "$GALLERY_HTML"
 echo "</head>" >> "$GALLERY_HTML"
 echo "<body style=\"margin:0px\" >" >> "$GALLERY_HTML"
 echo "<header>" >> "$GALLERY_HTML"
